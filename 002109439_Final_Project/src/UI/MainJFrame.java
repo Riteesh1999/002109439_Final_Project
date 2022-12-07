@@ -75,14 +75,34 @@ public class MainJFrame extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Lucida Grande", 1, 21)); // NOI18N
         jButton1.setForeground(new java.awt.Color(102, 204, 255));
         jButton1.setText("Passenger");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
 
         jButton2.setFont(new java.awt.Font("Lucida Grande", 1, 21)); // NOI18N
         jButton2.setForeground(new java.awt.Color(102, 204, 255));
         jButton2.setText("Flights");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton4.setFont(new java.awt.Font("Lucida Grande", 1, 21)); // NOI18N
         jButton4.setForeground(new java.awt.Color(102, 204, 255));
         jButton4.setText("Tickets");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
 
         jButton5.setFont(new java.awt.Font("Lucida Grande", 1, 21)); // NOI18N
         jButton5.setForeground(new java.awt.Color(102, 204, 255));
@@ -143,6 +163,25 @@ public class MainJFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        new FlightsJFrame().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        new PassengersJFrame().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        new TicketsJFrame().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton4MouseClicked
 
     /**
      * @param args the command line arguments

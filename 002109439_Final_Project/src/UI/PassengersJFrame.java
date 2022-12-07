@@ -4,12 +4,14 @@
  */
 package UI;
 
-import java.beans.Statement;
+import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import net.proteanit.sql.DbUtils;
 
 /**
  *
@@ -22,6 +24,7 @@ public class PassengersJFrame extends javax.swing.JFrame {
      */
     public PassengersJFrame() {
         initComponents();
+        DisplayPassengers();
     }
 
     /**
@@ -80,6 +83,11 @@ public class PassengersJFrame extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TblPassengers.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TblPassengersMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(TblPassengers);
 
         PsName.setFont(new java.awt.Font("Lucida Grande", 0, 19)); // NOI18N
@@ -108,6 +116,11 @@ public class PassengersJFrame extends javax.swing.JFrame {
 
         btnEdit.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
         btnEdit.setText("Edit");
+        btnEdit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnEditMouseClicked(evt);
+            }
+        });
 
         btnSave.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
         btnSave.setText("Save");
@@ -141,12 +154,27 @@ public class PassengersJFrame extends javax.swing.JFrame {
 
         btnBack.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
         btnBack.setText("Back");
+        btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBackMouseClicked(evt);
+            }
+        });
 
         NCountry.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
         NCountry.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "India", "USA", "England", "China", "Russia", "Switzerland" }));
 
         btnDelete.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
         btnDelete.setText("Delete");
+        btnDelete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnDeleteMouseClicked(evt);
+            }
+        });
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
         PsNumber.setFont(new java.awt.Font("Lucida Grande", 0, 19)); // NOI18N
 
@@ -241,7 +269,7 @@ public class PassengersJFrame extends javax.swing.JFrame {
                     .addComponent(Gender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(PsNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(PsPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnBack)
                     .addComponent(btnDelete)
@@ -250,7 +278,7 @@ public class PassengersJFrame extends javax.swing.JFrame {
                         .addComponent(btnSave)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -260,8 +288,42 @@ public class PassengersJFrame extends javax.swing.JFrame {
 
     Connection cn = null;
     PreparedStatement ps = null;
-    ResultSet rs = null;
-    Statement st = null;
+    ResultSet rs = null, rs1 = null;
+    Statement st = null, st1 = null;
+    
+    private void DisplayPassengers()
+    {
+        try{
+            cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Airlines" , "root" , "");
+            st = cn.createStatement();
+            rs = st.executeQuery("Select * from tblPass");
+            TblPassengers.setModel(DbUtils.resultSetToTableModel(rs));
+        }catch (Exception e){
+            
+        }
+    }
+    int PassId = 0;
+    
+    private void CountPassengers()
+    {
+        try{
+            st1 = cn.createStatement();
+            rs1 = st1.executeQuery("Select Max(PId) from tblPass");
+            rs1.next();
+            PassId = rs1.getInt(1)+1;
+            
+        }catch (Exception e){
+            
+        }
+    }
+    
+    private void Clear()
+    {
+        PsName.setText("");
+        PsNumber.setText("");
+        PsAddress.setText("");
+        PsPhone.setText("");
+    }
     
     private void btnSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSaveMouseClicked
         if(PsName.getText().isEmpty() || PsNumber.getText().isEmpty() || PsAddress.getText().isEmpty() || PsPhone.getText().isEmpty())
@@ -270,9 +332,11 @@ public class PassengersJFrame extends javax.swing.JFrame {
             
         } else {
             try {
+                CountPassengers ();
+                
                 cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Airlines" , "root" , "");
                 PreparedStatement Add = cn.prepareStatement("insert into tblPass values(?,?,?,?,?,?,?)");
-                Add.setInt(1, 1);
+                Add.setInt(1, PassId);
                 Add.setString(2, PsName.getText());
                 Add.setString(3, NCountry.getSelectedItem().toString());
                 Add.setString(4, Gender.getSelectedItem().toString());
@@ -282,13 +346,97 @@ public class PassengersJFrame extends javax.swing.JFrame {
                 int row = Add.executeUpdate();
                 JOptionPane.showMessageDialog(this, "Passenger Added");
                 cn.close();
-                
+                DisplayPassengers();
+                Clear();
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this,e);
             }
         }
             
     }//GEN-LAST:event_btnSaveMouseClicked
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        if(Key == 0){
+        JOptionPane.showMessageDialog(this, "select a Passenger");
+    }else{
+            try{
+                cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Airlines" , "root" , "");
+                String Query = "Delete from tblPass where PId ="+Key;
+                Statement del = cn.createStatement();
+                del.executeUpdate(Query);
+                JOptionPane.showMessageDialog(this, "Passenger deleted successfully");
+                DisplayPassengers();
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(this, 0);
+            }
+        }
+    }//GEN-LAST:event_btnDeleteActionPerformed
+int Key = 0;
+    private void TblPassengersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TblPassengersMouseClicked
+        DefaultTableModel model = (DefaultTableModel)TblPassengers.getModel();
+        int MyIndex = TblPassengers.getSelectedRow();
+        //Key = Integer.valueOf(model.getValueAt(MyIndex, 0) toString());
+        Key = Integer.valueOf(model.getValueAt(MyIndex, 0) .toString());
+        PsName.setText(model.getValueAt(MyIndex, 1).toString());
+        NCountry.setSelectedItem(model.getValueAt(MyIndex, 2).toString());
+        Gender.setSelectedItem(model.getValueAt(MyIndex, 3).toString());
+        PsNumber.setText(model.getValueAt(MyIndex, 4).toString());
+        PsAddress.setText(model.getValueAt(MyIndex, 5).toString());
+        PsPhone.setText(model.getValueAt(MyIndex, 6).toString());
+    }//GEN-LAST:event_TblPassengersMouseClicked
+
+    private void btnDeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseClicked
+        if(Key == 0){
+        JOptionPane.showMessageDialog(this, "select a Passenger");
+    }else{
+            try{
+                cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Airlines" , "root" , "");
+                String Query = "Delete from tblPass where PId ="+Key;
+                Statement del = cn.createStatement();
+                del.executeUpdate(Query);
+                JOptionPane.showMessageDialog(this, "Passenger deleted successfully");
+                DisplayPassengers();
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(this, 0);
+            }
+        }
+    }//GEN-LAST:event_btnDeleteMouseClicked
+
+    private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
+        new MainJFrame().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnBackMouseClicked
+
+    private void btnEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEditMouseClicked
+        if(Key == 0)
+        {
+            JOptionPane.showMessageDialog(this , "Select a Passenger");
+            
+        } else {
+            try {
+                CountPassengers ();
+                
+                cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Airlines" , "root" , "");
+                String Query = "Update tblPass set PName = ?, PNat = ?, PGen = ?,PPass = ?, PAdd = ?, PPhone = ?, where PId = ?";
+                PreparedStatement Add = cn.prepareStatement(Query);
+                Add.setInt(7, Key);
+                Add.setString(1, PsName.getText());
+                Add.setString(2, NCountry.getSelectedItem().toString());
+                Add.setString(3, Gender.getSelectedItem().toString());
+                Add.setString(4, PsNumber.getText());
+                Add.setString(5, PsAddress.getText());
+                Add.setString(6, PsPhone.getText());
+                int row = Add.executeUpdate();
+                JOptionPane.showMessageDialog(this, "Passenger Updated");
+                cn.close();
+                DisplayPassengers();
+                Clear();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this,e);
+            }
+        }
+            
+    }//GEN-LAST:event_btnEditMouseClicked
 
     /**
      * @param args the command line arguments
