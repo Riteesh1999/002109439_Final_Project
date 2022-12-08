@@ -25,7 +25,7 @@ public class CancelJFrame extends javax.swing.JFrame {
         initComponents();
         GetTickets();
         FLCode.setEditable(false);
-        
+        DisplayCancellations();
     }
 
     /**
@@ -299,13 +299,26 @@ private void GetTickets()
         
     }
     private void btnResetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnResetMouseClicked
-        FLCode.setName("");
+        FLCode.setText("");
+        
     }//GEN-LAST:event_btnResetMouseClicked
 
     private void TicketIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TicketIDActionPerformed
         GetFLCode();
     }//GEN-LAST:event_TicketIDActionPerformed
-
+private void Cancel()
+{
+    try{
+                cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Airlines" , "root" , "");
+                String Query = "Delete from tblBookings where TicketId ="+TicketID.getSelectedItem();
+                Statement del = cn.createStatement();
+                del.executeUpdate(Query);
+//                JOptionPane.showMessageDialog(this, "Flight deleted successfully");
+//                DisplayFlights();
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(this, e);
+            }
+}
     private void btnCancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelMouseClicked
         if(FLCode.getText().isEmpty())
         {
@@ -316,17 +329,17 @@ private void GetTickets()
                 CountCancelled ();
                 
                 cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Airlines" , "root" , "");
-                PreparedStatement Add = cn.prepareStatement("insert into tblPass values(?,?,?,?,?,?,?)");
+                PreparedStatement Add = cn.prepareStatement("insert into tblCancellation values(?,?,?,?)");
                 Add.setInt(1, CancelId);
                 Add.setString(2, TicketID.getSelectedItem().toString());
                 Add.setString(3, FLCode.getText());
-                Add.setString(4, DpDate.getDateFormatString());
+                Add.setString(4, DpDate.getDate().toString());
                 
                 int row = Add.executeUpdate();
                 JOptionPane.showMessageDialog(this, "Ticket Cancelled Successfully");
                 cn.close();
                 DisplayCancellations();
-//                Clear();
+                Cancel();
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this,e);
             }

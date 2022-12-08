@@ -107,6 +107,11 @@ public class MainJFrame extends javax.swing.JFrame {
         jButton5.setFont(new java.awt.Font("Lucida Grande", 1, 21)); // NOI18N
         jButton5.setForeground(new java.awt.Color(102, 204, 255));
         jButton5.setText("Cancellation");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -182,6 +187,11 @@ public class MainJFrame extends javax.swing.JFrame {
         new TicketsJFrame().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        new CancelJFrame().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton5MouseClicked
 
     /**
      * @param args the command line arguments
