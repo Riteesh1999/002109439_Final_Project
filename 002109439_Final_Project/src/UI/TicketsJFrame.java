@@ -29,6 +29,7 @@ public class TicketsJFrame extends javax.swing.JFrame {
         PsNationality.setEditable(false);
         PsName.setEditable(false);
         PsPass.setEditable(false);
+        Gender.setEnabled(false); 
         DisplayBookings();
         GetFlights();
         
@@ -335,6 +336,7 @@ public class TicketsJFrame extends javax.swing.JFrame {
                 PsName.setText(rs.getString("PName"));
                 PsNationality.setText(rs.getString("PNat"));
                 PsPass.setText(rs.getString("PPass"));
+                Gender.addItem(rs.getString("PGen"));
                 
             }
         }catch(Exception e){

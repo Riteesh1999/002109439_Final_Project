@@ -4,6 +4,14 @@
  */
 package UI;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+import net.proteanit.sql.DbUtils;
+
 /**
  *
  * @author riteesh
@@ -15,6 +23,9 @@ public class CancelJFrame extends javax.swing.JFrame {
      */
     public CancelJFrame() {
         initComponents();
+        GetTickets();
+        FLCode.setEditable(false);
+        
     }
 
     /**
@@ -27,31 +38,37 @@ public class CancelJFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel7 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnReset = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
+        TblCancellation = new javax.swing.JTable();
+        btnCancel = new javax.swing.JButton();
         jPanel13 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        btnBack = new javax.swing.JButton();
+        TicketID = new javax.swing.JComboBox<>();
         jLabel17 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        DpDate = new com.toedter.calendar.JDateChooser();
+        FLCode = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(102, 204, 255));
-        jLabel7.setText("Passenger ID");
+        jLabel7.setText("Ticket ID");
 
-        jButton1.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jButton1.setText("Reset");
+        btnReset.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
+        btnReset.setText("Reset");
+        btnReset.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnResetMouseClicked(evt);
+            }
+        });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TblCancellation.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -62,10 +79,16 @@ public class CancelJFrame extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        TblCancellation.setRowHeight(25);
+        jScrollPane1.setViewportView(TblCancellation);
 
-        jButton2.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jButton2.setText("Cancel");
+        btnCancel.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
+        btnCancel.setText("Cancel");
+        btnCancel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCancelMouseClicked(evt);
+            }
+        });
 
         jPanel13.setBackground(new java.awt.Color(102, 204, 255));
 
@@ -97,20 +120,30 @@ public class CancelJFrame extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(102, 204, 255));
         jLabel11.setText("Manage Passenger");
 
-        jButton3.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jButton3.setText("Back");
+        btnBack.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
+        btnBack.setText("Back");
+        btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBackMouseClicked(evt);
+            }
+        });
 
-        jComboBox1.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
+        TicketID.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
+        TicketID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TicketIDActionPerformed(evt);
+            }
+        });
 
         jLabel17.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(102, 204, 255));
         jLabel17.setText("Flight Code");
 
-        jComboBox3.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 204, 255));
         jLabel1.setText("Departure Date");
+
+        FLCode.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -120,46 +153,43 @@ public class CancelJFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2)
+                        .addComponent(jLabel6)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(287, Short.MAX_VALUE)
+                        .addComponent(btnCancel)
                         .addGap(124, 124, 124)
-                        .addComponent(jButton1)
+                        .addComponent(btnReset)
                         .addGap(150, 150, 150)
-                        .addComponent(jButton3)
-                        .addGap(215, 215, 215))
+                        .addComponent(btnBack)
+                        .addGap(215, 215, 215)))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel11)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(460, 460, 460)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel17)
-                                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(144, 144, 144))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel6))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(211, 211, 211)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel7)
-                                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel11)))
-                                .addGap(92, 92, 92)))
+                            .addComponent(jLabel7)
+                            .addComponent(TicketID, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(93, 93, 93)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 189, Short.MAX_VALUE)))
-                .addContainerGap())
+                            .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(FLCode))
+                        .addGap(35, 35, 35)))
+                .addGap(92, 92, 92)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(DpDate, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(197, 197, 197))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,17 +199,17 @@ public class CancelJFrame extends javax.swing.JFrame {
                             .addComponent(jLabel1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(DpDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(FLCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                        .addComponent(TicketID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btnBack)
+                    .addComponent(btnReset)
+                    .addComponent(btnCancel))
                 .addGap(34, 34, 34)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
@@ -188,7 +218,121 @@ public class CancelJFrame extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+Connection cn = null;
+    PreparedStatement ps = null;
+    ResultSet rs = null, rs1 = null;
+    Statement st = null, st1 = null;
+    
+    
+    private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
+        new MainJFrame().setVisible(true);
+        this.dispose();
+        GetTickets();
+    }//GEN-LAST:event_btnBackMouseClicked
+private void GetTickets()
+    {
+        try{
+            cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Airlines" , "root" , "");
+            st = cn.createStatement();
+            String Query = "select * from tblBookings";
+            rs = st.executeQuery(Query);
+            while(rs.next())
+            {
+                String t = rs.getString("TicketId");
+                TicketID.addItem(t );
+                
+            }
+        }catch(Exception e){
+            
+        }
+        
+    }
+    
+    
+    private void GetFLCode()
+    {
+        String Query = "select * from tblBookings where TicketId ="+TicketID.getSelectedItem().toString();
+        Statement st;
+        ResultSet rs;
+        try{
+            cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Airlines" , "root" , "");
+            st = cn.createStatement();
+            rs = st.executeQuery(Query);
+            if(rs.next()){
+                FLCode.setText(rs.getString("FlCode"));
+  
+            }
+        }catch(Exception e){
+            
+        }
+    }
+    private void DisplayCancellations()
+    {
+        try{
+            cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Airlines" , "root" , "");
+            st = cn.createStatement();
+            rs = st.executeQuery("Select * from tblCancellation");
+            TblCancellation.setModel(DbUtils.resultSetToTableModel(rs));
+        }catch (Exception e){
+            
+        }
+    }
+    int CancelId = 0;
+    
+    private void CountCancelled()
+    {
+        try{
+            st1 = cn.createStatement();
+            rs1 = st1.executeQuery("Select Max(Cancid) from tblCancellation");
+            rs1.next();
+            CancelId = rs1.getInt(1)+1;
+            
+        }catch (Exception e){
+            
+        }
+    }
+    private void Clear()
+    {
+        FLCode.setText("");
+        
+    }
+    private void btnResetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnResetMouseClicked
+        FLCode.setName("");
+    }//GEN-LAST:event_btnResetMouseClicked
+
+    private void TicketIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TicketIDActionPerformed
+        GetFLCode();
+    }//GEN-LAST:event_TicketIDActionPerformed
+
+    private void btnCancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelMouseClicked
+        if(FLCode.getText().isEmpty())
+        {
+            JOptionPane.showMessageDialog(this , "Missing Information");
+            
+        } else {
+            try {
+                CountCancelled ();
+                
+                cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Airlines" , "root" , "");
+                PreparedStatement Add = cn.prepareStatement("insert into tblPass values(?,?,?,?,?,?,?)");
+                Add.setInt(1, CancelId);
+                Add.setString(2, TicketID.getSelectedItem().toString());
+                Add.setString(3, FLCode.getText());
+                Add.setString(4, DpDate.getDateFormatString());
+                
+                int row = Add.executeUpdate();
+                JOptionPane.showMessageDialog(this, "Ticket Cancelled Successfully");
+                cn.close();
+                DisplayCancellations();
+//                Clear();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this,e);
+            }
+        }
+        
+    }//GEN-LAST:event_btnCancelMouseClicked
 
     /**
      * @param args the command line arguments
@@ -227,12 +371,13 @@ public class CancelJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
+    private com.toedter.calendar.JDateChooser DpDate;
+    private javax.swing.JTextField FLCode;
+    private javax.swing.JTable TblCancellation;
+    private javax.swing.JComboBox<String> TicketID;
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnCancel;
+    private javax.swing.JButton btnReset;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel16;
@@ -241,6 +386,5 @@ public class CancelJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
