@@ -146,7 +146,7 @@ public class LoginJFrame extends javax.swing.JFrame {
         {
             new MainJFrame().setVisible(true);
             this.dispose();
-        }else if(txtUser.getText().equals("User") && txtPass.getText().equals("user")){
+        }else if(txtUser.getText().equals("Company") && txtPass.getText().equals("company")){
             new CompanyJFrame().setVisible(true);
             this.dispose();
         }

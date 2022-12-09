@@ -314,7 +314,7 @@ public class CompanyJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBackMouseClicked
 
     private void btnBookTicketsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBookTicketsMouseClicked
-        new TicketsJFrame().setVisible(true);
+        new CompanyBookingJFrame().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBookTicketsMouseClicked
 
