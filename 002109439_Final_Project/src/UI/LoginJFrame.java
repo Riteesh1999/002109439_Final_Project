@@ -146,7 +146,11 @@ public class LoginJFrame extends javax.swing.JFrame {
         {
             new MainJFrame().setVisible(true);
             this.dispose();
-        }else{
+        }else if(txtUser.getText().equals("User") && txtPass.getText().equals("user")){
+            new CompanyJFrame().setVisible(true);
+            this.dispose();
+        }
+        else{
             JOptionPane.showMessageDialog(this, "Plaese enter valid credentials.");
             txtUser.setText(null);
             txtPass.setText(null);
