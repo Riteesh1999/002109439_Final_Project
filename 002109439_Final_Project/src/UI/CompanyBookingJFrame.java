@@ -23,6 +23,13 @@ public class CompanyBookingJFrame extends javax.swing.JFrame {
      */
     public CompanyBookingJFrame() {
         initComponents();
+        GetPassenger();
+        PsNationality.setEditable(false);
+        PsName.setEditable(false);
+        PsPass.setEditable(false);
+        Gender.setEnabled(false); 
+        DisplayBookings();
+        GetFlights();
     }
 
     /**

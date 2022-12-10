@@ -10,7 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import UI.PassengersJFrame;
+import UI.CustomersJFrame;
 import javax.swing.JOptionPane;
 import net.proteanit.sql.DbUtils;
 
