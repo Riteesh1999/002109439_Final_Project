@@ -4,6 +4,12 @@
  */
 package UI;
 
+
+import static UI.UserMainJFrame.Gender;
+import static UI.UserMainJFrame
+import static UI.UserMainJFrame.ID;
+import static UI.UserMainJFrame.Name;
+import static UI.UserMainJFrame.Nationality;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -11,6 +17,8 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import net.proteanit.sql.DbUtils;
+import static UI.UserMainJFrame.Passport;
+import static UI.UserMainJFrame.tblHotelHistory;
 
 /**
  *
@@ -49,7 +57,7 @@ public class LoginJFrame extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel2.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel2.setBackground(new java.awt.Color(73, 158, 228));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -63,7 +71,7 @@ public class LoginJFrame extends javax.swing.JFrame {
         );
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel1.setForeground(new java.awt.Color(62, 146, 222));
         jLabel1.setText("Quickr Airlines");
 
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
@@ -78,7 +86,7 @@ public class LoginJFrame extends javax.swing.JFrame {
         txtPass.setText("jPasswordField1");
 
         btnAdminLogin.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        btnAdminLogin.setForeground(new java.awt.Color(102, 204, 255));
+        btnAdminLogin.setForeground(new java.awt.Color(50, 126, 211));
         btnAdminLogin.setText("Admin Login");
         btnAdminLogin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -86,7 +94,7 @@ public class LoginJFrame extends javax.swing.JFrame {
             }
         });
 
-        btnSignup.setForeground(new java.awt.Color(102, 204, 255));
+        btnSignup.setForeground(new java.awt.Color(34, 113, 225));
         btnSignup.setText("Not a Member? Sign-Up Now.");
         btnSignup.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -95,7 +103,7 @@ public class LoginJFrame extends javax.swing.JFrame {
         });
 
         btnUserLogin.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        btnUserLogin.setForeground(new java.awt.Color(102, 204, 255));
+        btnUserLogin.setForeground(new java.awt.Color(54, 125, 226));
         btnUserLogin.setText("User Login");
         btnUserLogin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -107,43 +115,40 @@ public class LoginJFrame extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(61, 61, 61)
+                        .addComponent(btnUserLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnAdminLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel2)
-                                            .addComponent(jLabel3))
-                                        .addGap(34, 34, 34)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(txtUser)
-                                            .addComponent(txtPass)))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(113, 113, 113)
-                                        .addComponent(btnSignup)))
-                                .addGap(19, 19, 19))
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3))
+                                .addGap(34, 34, 34)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtUser)
+                                    .addComponent(txtPass))
+                                .addGap(61, 61, 61))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(61, 61, 61)
-                                .addComponent(btnUserLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnAdminLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(23, 23, 23)))
-                .addGap(44, 44, 44))
+                                .addComponent(btnSignup)
+                                .addGap(73, 73, 73))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(77, 77, 77))))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -155,9 +160,9 @@ public class LoginJFrame extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAdminLogin)
                     .addComponent(btnUserLogin))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnSignup)
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -210,12 +215,24 @@ public class LoginJFrame extends javax.swing.JFrame {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Airlines" , "root" , "");
             String sql = "Select * from tblPass where UserName = ? and Password = ?";
+            String ql="Select * from tblHTBookings where PsName = ?";
+            PreparedStatement sp = con.prepareStatement(ql);
             PreparedStatement ps = con.prepareStatement(sql);
+            sp.setString(1, txtUser.getText());
+            sp.setString(2, txtPass.getText());
+            ResultSet r = sp.executeQuery();
             ps.setString(1, txtUser.getText());
             ps.setString(2, txtPass.getText());
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
                 JOptionPane.showMessageDialog(null, "Login Succesful");
+                Name.setText(rs.getString(2));
+                Gender.setText(rs.getString(4));
+                ID.setText(rs.getString(1));
+                Nationality.setText(rs.getString(3));
+                Passport.setText(rs.getString(5));
+                tblHotelHistory.setModel(DbUtils.resultSetToTableModel(r));
+                
                 new UserMainJFrame().setVisible(true);
                 this.dispose();
             }

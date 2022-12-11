@@ -8,9 +8,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
-import UI.CustomersJFrame;
 import javax.swing.JOptionPane;
 import net.proteanit.sql.DbUtils;
 
@@ -18,21 +16,20 @@ import net.proteanit.sql.DbUtils;
  *
  * @author riteesh
  */
-public class TicketsJFrame extends javax.swing.JFrame {
+public class UserFTBookingJFrame extends javax.swing.JFrame {
 
     /**
-     * Creates new form TicketsJFrame
+     * Creates new form UserFTBookingJFrame
      */
-    public TicketsJFrame() {
+    public UserFTBookingJFrame() {
         initComponents();
         GetPassenger();
         PsNationality.setEditable(false);
         PsName.setEditable(false);
         PsPass.setEditable(false);
         Gender.setEnabled(false); 
-        DisplayBookings();
+        DisplayFlights();
         GetFlights();
-        
     }
 
     /**
@@ -44,60 +41,33 @@ public class TicketsJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPopupMenu1 = new javax.swing.JPopupMenu();
-        PsPass = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        PsNationality = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        Cost = new javax.swing.JTextField();
         btnReset = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TblBookings = new javax.swing.JTable();
-        btnBook = new javax.swing.JButton();
-        jPanel11 = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        PsName = new javax.swing.JTextField();
-        btnBack = new javax.swing.JButton();
-        PsId = new javax.swing.JComboBox<>();
-        jLabel9 = new javax.swing.JLabel();
-        Cost = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
         FLCode = new javax.swing.JComboBox<>();
         Gender = new javax.swing.JComboBox<>();
+        PsPass = new javax.swing.JTextField();
+        btnBook = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        PsName = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        btnBack = new javax.swing.JButton();
+        PsNationality = new javax.swing.JTextField();
+        PsId = new javax.swing.JComboBox<>();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        PsPass.setFont(new java.awt.Font("Lucida Grande", 0, 19)); // NOI18N
-
-        jLabel10.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(21, 136, 193));
-        jLabel10.setText("Passport Number");
-
-        jLabel14.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(18, 140, 201));
-        jLabel14.setText("Nationality");
-
-        jLabel6.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(18, 139, 199));
-        jLabel6.setText("Flight Available");
-
-        jLabel11.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(24, 150, 213));
-        jLabel11.setText("Flight Bookings");
-
-        PsNationality.setFont(new java.awt.Font("Lucida Grande", 0, 19)); // NOI18N
-
-        jLabel12.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(25, 138, 195));
-        jLabel12.setText("Cost");
-
-        jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(13, 142, 206));
-        jLabel7.setText("Passenger ID");
+        Cost.setFont(new java.awt.Font("Lucida Grande", 0, 19)); // NOI18N
 
         btnReset.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
         btnReset.setText("Reset");
@@ -106,6 +76,10 @@ public class TicketsJFrame extends javax.swing.JFrame {
                 btnResetMouseClicked(evt);
             }
         });
+
+        jLabel15.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(22, 139, 198));
+        jLabel15.setText("Flight Code");
 
         TblBookings.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -120,6 +94,13 @@ public class TicketsJFrame extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(TblBookings);
 
+        FLCode.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
+
+        Gender.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
+        Gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other" }));
+
+        PsPass.setFont(new java.awt.Font("Lucida Grande", 0, 19)); // NOI18N
+
         btnBook.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
         btnBook.setText("Book");
         btnBook.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -127,6 +108,14 @@ public class TicketsJFrame extends javax.swing.JFrame {
                 btnBookMouseClicked(evt);
             }
         });
+
+        jLabel8.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(28, 145, 204));
+        jLabel8.setText("Gender");
+
+        jLabel10.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(21, 136, 193));
+        jLabel10.setText("Passport Number");
 
         jPanel11.setBackground(new java.awt.Color(20, 155, 223));
 
@@ -150,7 +139,19 @@ public class TicketsJFrame extends javax.swing.JFrame {
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
+        jLabel14.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(18, 140, 201));
+        jLabel14.setText("Nationality");
+
+        jLabel6.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(18, 139, 199));
+        jLabel6.setText("Flight Available");
+
         PsName.setFont(new java.awt.Font("Lucida Grande", 0, 19)); // NOI18N
+
+        jLabel11.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(24, 150, 213));
+        jLabel11.setText("Flight Bookings");
 
         btnBack.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
         btnBack.setText("Back");
@@ -160,6 +161,8 @@ public class TicketsJFrame extends javax.swing.JFrame {
             }
         });
 
+        PsNationality.setFont(new java.awt.Font("Lucida Grande", 0, 19)); // NOI18N
+
         PsId.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
         PsId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,24 +170,17 @@ public class TicketsJFrame extends javax.swing.JFrame {
             }
         });
 
+        jLabel12.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(25, 138, 195));
+        jLabel12.setText("Cost");
+
         jLabel9.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(19, 138, 198));
         jLabel9.setText("Passenger Name");
 
-        Cost.setFont(new java.awt.Font("Lucida Grande", 0, 19)); // NOI18N
-
-        jLabel15.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(22, 139, 198));
-        jLabel15.setText("Flight Code");
-
-        FLCode.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-
-        Gender.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        Gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other" }));
-
-        jLabel8.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(28, 145, 204));
-        jLabel8.setText("Gender");
+        jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(13, 142, 206));
+        jLabel7.setText("Passenger ID");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -206,7 +202,7 @@ public class TicketsJFrame extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(89, 89, 89)
                                 .addComponent(btnBook)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 230, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnReset)
                                 .addGap(170, 170, 170)
                                 .addComponent(btnBack)
@@ -216,7 +212,7 @@ public class TicketsJFrame extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel15)
                                     .addComponent(FLCode, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel8)
                                     .addComponent(Gender, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -288,7 +284,7 @@ public class TicketsJFrame extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(PsId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(PsName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -363,12 +359,12 @@ public class TicketsJFrame extends javax.swing.JFrame {
             
         }
     }
-    private void DisplayBookings()
+    private void DisplayFlights()
     {
         try{
             cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Airlines" , "root" , "");
             st = cn.createStatement();
-            rs = st.executeQuery("Select * from tblBookings");
+            rs = st.executeQuery("Select * from tblPassengers");
             TblBookings.setModel(DbUtils.resultSetToTableModel(rs));
         }catch (Exception e){
             
@@ -396,15 +392,25 @@ public class TicketsJFrame extends javax.swing.JFrame {
         PsNationality.setText("");
         Cost.setText("");
     }
+    
+    private void btnResetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnResetMouseClicked
+        FLCode.setSelectedIndex(-1);
+        //        PsId.setSelectedIndex(-1);
+        PsName.setText("");
+        PsPass.setText("");
+        PsNationality.setText("");
+        Cost.setText("");
+    }//GEN-LAST:event_btnResetMouseClicked
+
     private void btnBookMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBookMouseClicked
-         if(PsName.getText().isEmpty() || PsId.getSelectedIndex() == -1 || Cost.getText().isEmpty() || PsNationality.getText().isEmpty() || PsPass.getText().isEmpty() || FLCode.getSelectedIndex() == -1)
+        if(PsName.getText().isEmpty() || PsId.getSelectedIndex() == -1 || Cost.getText().isEmpty() || PsNationality.getText().isEmpty() || PsPass.getText().isEmpty() || FLCode.getSelectedIndex() == -1)
         {
             JOptionPane.showMessageDialog(this , "Missing Information");
-            
+
         } else {
             try {
                 CountBookings ();
-                
+
                 cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Airlines" , "root" , "");
                 PreparedStatement Add = cn.prepareStatement("insert into tblBookings values(?,?,?,?,?,?,?)");
                 Add.setInt(1, TicketId);
@@ -417,17 +423,17 @@ public class TicketsJFrame extends javax.swing.JFrame {
                 int row = Add.executeUpdate();
                 JOptionPane.showMessageDialog(this, "Booking Completed");
                 cn.close();
-                DisplayBookings();
+                DisplayFlights();
                 Clear();
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this,e);
             }
         }
-        
+
     }//GEN-LAST:event_btnBookMouseClicked
 
     private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
-        new MainJFrame().setVisible(true);
+        new UserMainJFrame().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBackMouseClicked
 
@@ -435,18 +441,8 @@ public class TicketsJFrame extends javax.swing.JFrame {
         GetPassengerInfo();
     }//GEN-LAST:event_PsIdActionPerformed
 
-    private void btnResetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnResetMouseClicked
-        FLCode.setSelectedIndex(-1);
-//        PsId.setSelectedIndex(-1);
-        PsName.setText("");
-        PsPass.setText("");
-        PsNationality.setText("");
-        Cost.setText("");
-    }//GEN-LAST:event_btnResetMouseClicked
-
-    /**
-     * @param args the command line arguments
-     */
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -461,21 +457,20 @@ public class TicketsJFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TicketsJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserFTBookingJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TicketsJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserFTBookingJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TicketsJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserFTBookingJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TicketsJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserFTBookingJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TicketsJFrame().setVisible(true);
+                new UserFTBookingJFrame().setVisible(true);
             }
         });
     }
@@ -503,7 +498,6 @@ public class TicketsJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel11;
-    private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

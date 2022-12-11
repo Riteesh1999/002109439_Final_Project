@@ -68,11 +68,11 @@ public class BookingJFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel7.setForeground(new java.awt.Color(18, 154, 222));
         jLabel7.setText("Passenger ID");
 
         jLabel9.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel9.setForeground(new java.awt.Color(18, 148, 213));
         jLabel9.setText("Passenger Name");
 
         btnReset.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
@@ -104,7 +104,7 @@ public class BookingJFrame extends javax.swing.JFrame {
         jScrollPane1.setViewportView(TblBookings);
 
         jLabel15.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel15.setForeground(new java.awt.Color(29, 153, 215));
         jLabel15.setText("Hotel Name");
 
         Gender.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
@@ -115,7 +115,7 @@ public class BookingJFrame extends javax.swing.JFrame {
         HtName.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
 
         jLabel10.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel10.setForeground(new java.awt.Color(21, 147, 210));
         jLabel10.setText("Passport Number");
 
         btnBook.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
@@ -127,13 +127,13 @@ public class BookingJFrame extends javax.swing.JFrame {
         });
 
         jLabel14.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel14.setForeground(new java.awt.Color(24, 148, 210));
         jLabel14.setText("Nationality");
 
-        jPanel11.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel11.setBackground(new java.awt.Color(25, 163, 231));
 
-        jLabel13.setFont(new java.awt.Font("Lucida Grande", 1, 36)); // NOI18N
-        jLabel13.setText("Quickr Airlines");
+        jLabel13.setFont(new java.awt.Font("Phosphate", 1, 36)); // NOI18N
+        jLabel13.setText("Quickr Bookings");
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -141,8 +141,8 @@ public class BookingJFrame extends javax.swing.JFrame {
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(420, 420, 420))
+                .addComponent(jLabel13)
+                .addGap(400, 400, 400))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,15 +153,15 @@ public class BookingJFrame extends javax.swing.JFrame {
         );
 
         jLabel6.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel6.setForeground(new java.awt.Color(25, 149, 211));
         jLabel6.setText("Bookings Completed");
 
         jLabel11.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(102, 204, 255));
-        jLabel11.setText("Bookings");
+        jLabel11.setForeground(new java.awt.Color(22, 159, 228));
+        jLabel11.setText("Hotel Bookings");
 
         jLabel8.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel8.setForeground(new java.awt.Color(23, 143, 203));
         jLabel8.setText("Gender");
 
         PsName.setFont(new java.awt.Font("Lucida Grande", 0, 19)); // NOI18N
@@ -177,7 +177,7 @@ public class BookingJFrame extends javax.swing.JFrame {
         });
 
         jLabel12.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel12.setForeground(new java.awt.Color(18, 150, 216));
         jLabel12.setText("Cost");
 
         PsId.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
@@ -207,7 +207,7 @@ public class BookingJFrame extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(89, 89, 89)
                                 .addComponent(btnBook)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel6)
                                     .addGroup(layout.createSequentialGroup()
@@ -215,17 +215,17 @@ public class BookingJFrame extends javax.swing.JFrame {
                                         .addComponent(btnReset)
                                         .addGap(170, 170, 170)
                                         .addComponent(btnBack)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(67, 67, 67)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel15)
                                     .addComponent(HtName, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(29, 29, 29)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel8)
                                     .addComponent(Gender, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(66, 66, 66)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel10)
                                     .addComponent(PsPass, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -241,7 +241,7 @@ public class BookingJFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel11)
-                .addGap(518, 518, 518))
+                .addGap(448, 448, 448))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -255,8 +255,8 @@ public class BookingJFrame extends javax.swing.JFrame {
                         .addGap(2, 2, 2)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel12)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel14))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

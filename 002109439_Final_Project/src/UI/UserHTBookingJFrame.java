@@ -8,9 +8,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
-import UI.CustomersJFrame;
 import javax.swing.JOptionPane;
 import net.proteanit.sql.DbUtils;
 
@@ -18,21 +16,20 @@ import net.proteanit.sql.DbUtils;
  *
  * @author riteesh
  */
-public class TicketsJFrame extends javax.swing.JFrame {
+public class UserHTBookingJFrame extends javax.swing.JFrame {
 
     /**
-     * Creates new form TicketsJFrame
+     * Creates new form UserHTBookingJFrame
      */
-    public TicketsJFrame() {
+    public UserHTBookingJFrame() {
         initComponents();
         GetPassenger();
         PsNationality.setEditable(false);
         PsName.setEditable(false);
         PsPass.setEditable(false);
         Gender.setEnabled(false); 
-        DisplayBookings();
-        GetFlights();
-        
+        GetHotels();
+        DisplayHotels();
     }
 
     /**
@@ -44,60 +41,39 @@ public class TicketsJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPopupMenu1 = new javax.swing.JPopupMenu();
-        PsPass = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        PsNationality = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         btnReset = new javax.swing.JButton();
+        Cost = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         TblBookings = new javax.swing.JTable();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        Gender = new javax.swing.JComboBox<>();
+        PsName = new javax.swing.JTextField();
+        PsPass = new javax.swing.JTextField();
+        PsNationality = new javax.swing.JTextField();
+        HtName = new javax.swing.JComboBox<>();
+        btnBack = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         btnBook = new javax.swing.JButton();
+        PsId = new javax.swing.JComboBox<>();
+        jLabel14 = new javax.swing.JLabel();
         jPanel11 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
-        PsName = new javax.swing.JTextField();
-        btnBack = new javax.swing.JButton();
-        PsId = new javax.swing.JComboBox<>();
-        jLabel9 = new javax.swing.JLabel();
-        Cost = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
-        FLCode = new javax.swing.JComboBox<>();
-        Gender = new javax.swing.JComboBox<>();
-        jLabel8 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        PsPass.setFont(new java.awt.Font("Lucida Grande", 0, 19)); // NOI18N
-
-        jLabel10.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(21, 136, 193));
-        jLabel10.setText("Passport Number");
-
-        jLabel14.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(18, 140, 201));
-        jLabel14.setText("Nationality");
-
-        jLabel6.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(18, 139, 199));
-        jLabel6.setText("Flight Available");
-
-        jLabel11.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(24, 150, 213));
-        jLabel11.setText("Flight Bookings");
-
-        PsNationality.setFont(new java.awt.Font("Lucida Grande", 0, 19)); // NOI18N
-
-        jLabel12.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(25, 138, 195));
-        jLabel12.setText("Cost");
-
         jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(13, 142, 206));
+        jLabel7.setForeground(new java.awt.Color(18, 154, 222));
         jLabel7.setText("Passenger ID");
+
+        jLabel9.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(18, 148, 213));
+        jLabel9.setText("Passenger Name");
 
         btnReset.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
         btnReset.setText("Reset");
@@ -106,6 +82,8 @@ public class TicketsJFrame extends javax.swing.JFrame {
                 btnResetMouseClicked(evt);
             }
         });
+
+        Cost.setFont(new java.awt.Font("Lucida Grande", 0, 19)); // NOI18N
 
         TblBookings.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -118,45 +96,53 @@ public class TicketsJFrame extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(TblBookings);
-
-        btnBook.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        btnBook.setText("Book");
-        btnBook.addMouseListener(new java.awt.event.MouseAdapter() {
+        TblBookings.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnBookMouseClicked(evt);
+                TblBookingsMouseClicked(evt);
             }
         });
+        jScrollPane1.setViewportView(TblBookings);
 
-        jPanel11.setBackground(new java.awt.Color(20, 155, 223));
+        jLabel15.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(29, 153, 215));
+        jLabel15.setText("Hotel Name");
 
-        jLabel13.setFont(new java.awt.Font("Phosphate", 1, 36)); // NOI18N
-        jLabel13.setText("Quickr Airlines");
+        jLabel8.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(23, 143, 203));
+        jLabel8.setText("Gender");
 
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(420, 420, 420))
-        );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
+        Gender.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
+        Gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other" }));
 
         PsName.setFont(new java.awt.Font("Lucida Grande", 0, 19)); // NOI18N
+
+        PsPass.setFont(new java.awt.Font("Lucida Grande", 0, 19)); // NOI18N
+
+        PsNationality.setFont(new java.awt.Font("Lucida Grande", 0, 19)); // NOI18N
+
+        HtName.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
 
         btnBack.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
         btnBack.setText("Back");
         btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnBackMouseClicked(evt);
+            }
+        });
+
+        jLabel10.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(21, 147, 210));
+        jLabel10.setText("Passport Number");
+
+        jLabel12.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(18, 150, 216));
+        jLabel12.setText("Cost");
+
+        btnBook.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
+        btnBook.setText("Book");
+        btnBook.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBookMouseClicked(evt);
             }
         });
 
@@ -167,24 +153,39 @@ public class TicketsJFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel9.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(19, 138, 198));
-        jLabel9.setText("Passenger Name");
+        jLabel14.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(24, 148, 210));
+        jLabel14.setText("Nationality");
 
-        Cost.setFont(new java.awt.Font("Lucida Grande", 0, 19)); // NOI18N
+        jPanel11.setBackground(new java.awt.Color(25, 163, 231));
 
-        jLabel15.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(22, 139, 198));
-        jLabel15.setText("Flight Code");
+        jLabel13.setFont(new java.awt.Font("Phosphate", 1, 36)); // NOI18N
+        jLabel13.setText("Quickr Bookings");
 
-        FLCode.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel13)
+                .addGap(400, 400, 400))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
 
-        Gender.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        Gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other" }));
+        jLabel6.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(25, 149, 211));
+        jLabel6.setText("List Of Hotels");
 
-        jLabel8.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(28, 145, 204));
-        jLabel8.setText("Gender");
+        jLabel11.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(22, 159, 228));
+        jLabel11.setText("Hotel Bookings");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -206,21 +207,25 @@ public class TicketsJFrame extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(89, 89, 89)
                                 .addComponent(btnBook)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 230, Short.MAX_VALUE)
-                                .addComponent(btnReset)
-                                .addGap(170, 170, 170)
-                                .addComponent(btnBack)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(75, 75, 75)
+                                        .addComponent(btnReset)
+                                        .addGap(170, 170, 170)
+                                        .addComponent(btnBack)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(67, 67, 67)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel15)
-                                    .addComponent(FLCode, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                                    .addComponent(HtName, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(29, 29, 29)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel8)
                                     .addComponent(Gender, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(66, 66, 66)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel10)
                                     .addComponent(PsPass, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -235,10 +240,8 @@ public class TicketsJFrame extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel11))
-                .addGap(476, 476, 476))
+                .addComponent(jLabel11)
+                .addGap(448, 448, 448))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -271,7 +274,7 @@ public class TicketsJFrame extends javax.swing.JFrame {
                                             .addComponent(jLabel10))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(FLCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(HtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(PsPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addGap(4, 4, 4)))
                         .addGap(65, 65, 65)
@@ -279,7 +282,9 @@ public class TicketsJFrame extends javax.swing.JFrame {
                             .addComponent(btnBack)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(btnReset)
-                                .addComponent(btnBook))))
+                                .addComponent(btnBook)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
@@ -288,31 +293,28 @@ public class TicketsJFrame extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(PsId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(PsName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    Connection cn = null;
+Connection cn = null;
     PreparedStatement ps = null;
     ResultSet rs = null, rs1 = null;
     Statement st = null, st1 = null;
-    private void GetFlights()
+    private void GetHotels()
     {
         try{
             cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Airlines" , "root" , "");
             st = cn.createStatement();
-            String Query = "select * from tblPassengers";
+            String Query = "select * from tblHotels";
             rs = st.executeQuery(Query);
             while(rs.next())
             {
-                String FCode = rs.getString("FlightCode");
-                FLCode.addItem(FCode);
+                String HTName = rs.getString("HotelName");
+                HtName.addItem(HTName);
                 
             }
         }catch(Exception e){
@@ -355,7 +357,7 @@ public class TicketsJFrame extends javax.swing.JFrame {
                 PsName.setText(rs.getString("PName"));
                 PsNationality.setText(rs.getString("PNat"));
                 PsPass.setText(rs.getString("PPass"));
-//                PsGen.getSelectedItem(rs.getString("PGen"));
+                Gender.setSelectedItem(rs.getString("PGen"));
 
                 
             }
@@ -363,12 +365,12 @@ public class TicketsJFrame extends javax.swing.JFrame {
             
         }
     }
-    private void DisplayBookings()
+    private void DisplayHotels()
     {
         try{
             cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Airlines" , "root" , "");
             st = cn.createStatement();
-            rs = st.executeQuery("Select * from tblBookings");
+            rs = st.executeQuery("Select * from tblHotels");
             TblBookings.setModel(DbUtils.resultSetToTableModel(rs));
         }catch (Exception e){
             
@@ -380,7 +382,7 @@ public class TicketsJFrame extends javax.swing.JFrame {
     {
         try{
             st1 = cn.createStatement();
-            rs1 = st1.executeQuery("Select Max(TicketId) from tblBookings");
+            rs1 = st1.executeQuery("Select Max(TicketId) from tblHTBookings");
             rs1.next();
             TicketId = rs1.getInt(1)+1;
             
@@ -388,28 +390,47 @@ public class TicketsJFrame extends javax.swing.JFrame {
             
         }
     }
+   
     private void Clear()
     {
-        FLCode.setSelectedIndex(-1);
+        HtName.setSelectedIndex(-1);
         PsName.setText("");
         PsPass.setText("");
         PsNationality.setText("");
         Cost.setText("");
     }
+    private void btnResetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnResetMouseClicked
+        HtName.setSelectedIndex(-1);
+        //        PsId.setSelectedIndex(-1);
+        PsName.setText("");
+        PsPass.setText("");
+        PsNationality.setText("");
+        Cost.setText("");
+    }//GEN-LAST:event_btnResetMouseClicked
+
+    private void TblBookingsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TblBookingsMouseClicked
+
+    }//GEN-LAST:event_TblBookingsMouseClicked
+
+    private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
+        new UserMainJFrame().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnBackMouseClicked
+
     private void btnBookMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBookMouseClicked
-         if(PsName.getText().isEmpty() || PsId.getSelectedIndex() == -1 || Cost.getText().isEmpty() || PsNationality.getText().isEmpty() || PsPass.getText().isEmpty() || FLCode.getSelectedIndex() == -1)
+        if(PsName.getText().isEmpty() || PsId.getSelectedIndex() == -1 || Cost.getText().isEmpty() || PsNationality.getText().isEmpty() || PsPass.getText().isEmpty() || HtName.getSelectedIndex() == -1)
         {
             JOptionPane.showMessageDialog(this , "Missing Information");
-            
+
         } else {
             try {
                 CountBookings ();
-                
+
                 cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Airlines" , "root" , "");
-                PreparedStatement Add = cn.prepareStatement("insert into tblBookings values(?,?,?,?,?,?,?)");
+                PreparedStatement Add = cn.prepareStatement("insert into tblHTBookings values(?,?,?,?,?,?,?)");
                 Add.setInt(1, TicketId);
                 Add.setString(2, PsName.getText());
-                Add.setString(3, FLCode.getSelectedItem().toString());
+                Add.setString(3, HtName.getSelectedItem().toString());
                 Add.setString(4, Gender.getSelectedItem().toString());
                 Add.setString(5, PsPass.getText());
                 Add.setString(6, Cost.getText());
@@ -417,32 +438,17 @@ public class TicketsJFrame extends javax.swing.JFrame {
                 int row = Add.executeUpdate();
                 JOptionPane.showMessageDialog(this, "Booking Completed");
                 cn.close();
-                DisplayBookings();
+                DisplayHotels();
                 Clear();
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this,e);
             }
         }
-        
     }//GEN-LAST:event_btnBookMouseClicked
-
-    private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
-        new MainJFrame().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnBackMouseClicked
 
     private void PsIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PsIdActionPerformed
         GetPassengerInfo();
     }//GEN-LAST:event_PsIdActionPerformed
-
-    private void btnResetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnResetMouseClicked
-        FLCode.setSelectedIndex(-1);
-//        PsId.setSelectedIndex(-1);
-        PsName.setText("");
-        PsPass.setText("");
-        PsNationality.setText("");
-        Cost.setText("");
-    }//GEN-LAST:event_btnResetMouseClicked
 
     /**
      * @param args the command line arguments
@@ -461,29 +467,28 @@ public class TicketsJFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TicketsJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserHTBookingJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TicketsJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserHTBookingJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TicketsJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserHTBookingJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TicketsJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserHTBookingJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TicketsJFrame().setVisible(true);
+                new UserHTBookingJFrame().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Cost;
-    private javax.swing.JComboBox<String> FLCode;
     private javax.swing.JComboBox<String> Gender;
+    private javax.swing.JComboBox<String> HtName;
     private javax.swing.JComboBox<String> PsId;
     private javax.swing.JTextField PsName;
     private javax.swing.JTextField PsNationality;
@@ -503,7 +508,6 @@ public class TicketsJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel11;
-    private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
