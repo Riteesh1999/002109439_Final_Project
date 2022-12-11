@@ -6,7 +6,6 @@ package UI;
 
 
 import static UI.UserMainJFrame.Gender;
-import static UI.UserMainJFrame
 import static UI.UserMainJFrame.ID;
 import static UI.UserMainJFrame.Name;
 import static UI.UserMainJFrame.Nationality;
@@ -18,7 +17,7 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 import net.proteanit.sql.DbUtils;
 import static UI.UserMainJFrame.Passport;
-import static UI.UserMainJFrame.tblHotelHistory;
+
 
 /**
  *
@@ -57,7 +56,7 @@ public class LoginJFrame extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel2.setBackground(new java.awt.Color(73, 158, 228));
+        jPanel2.setBackground(new java.awt.Color(19, 121, 205));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -70,8 +69,8 @@ public class LoginJFrame extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(62, 146, 222));
+        jLabel1.setFont(new java.awt.Font("Phosphate", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(19, 121, 213));
         jLabel1.setText("Quickr Airlines");
 
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
@@ -214,16 +213,12 @@ public class LoginJFrame extends javax.swing.JFrame {
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Airlines" , "root" , "");
-            String sql = "Select * from tblPass where UserName = ? and Password = ?";
-            String ql="Select * from tblHTBookings where PsName = ?";
-            PreparedStatement sp = con.prepareStatement(ql);
-            PreparedStatement ps = con.prepareStatement(sql);
-            sp.setString(1, txtUser.getText());
-            sp.setString(2, txtPass.getText());
-            ResultSet r = sp.executeQuery();
+            String sql = "Select * from tblPass where UserName = ? and Password = ?";     
+            PreparedStatement ps = con.prepareStatement(sql);            
             ps.setString(1, txtUser.getText());
             ps.setString(2, txtPass.getText());
             ResultSet rs = ps.executeQuery();
+            
             if(rs.next()){
                 JOptionPane.showMessageDialog(null, "Login Succesful");
                 Name.setText(rs.getString(2));
@@ -231,7 +226,7 @@ public class LoginJFrame extends javax.swing.JFrame {
                 ID.setText(rs.getString(1));
                 Nationality.setText(rs.getString(3));
                 Passport.setText(rs.getString(5));
-                tblHotelHistory.setModel(DbUtils.resultSetToTableModel(r));
+                
                 
                 new UserMainJFrame().setVisible(true);
                 this.dispose();

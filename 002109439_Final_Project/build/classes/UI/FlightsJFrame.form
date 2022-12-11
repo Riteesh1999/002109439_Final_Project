@@ -163,7 +163,7 @@
         <Container class="javax.swing.JPanel" name="jPanel2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="66" type="rgb"/>
+              <Color blue="c8" green="8d" red="17" type="rgb"/>
             </Property>
           </Properties>
 
@@ -191,7 +191,7 @@
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Grande" size="36" style="1"/>
+                  <Font name="Phosphate" size="36" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Quickr Airlines"/>
               </Properties>
@@ -204,7 +204,7 @@
               <Font name="Lucida Grande" size="24" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="66" type="rgb"/>
+              <Color blue="c4" green="89" red="14" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="List of Flights"/>
           </Properties>
@@ -215,7 +215,7 @@
               <Font name="Lucida Grande" size="19" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="66" type="rgb"/>
+              <Color blue="b8" green="81" red="13" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Source"/>
           </Properties>
@@ -233,7 +233,7 @@
               <Font name="Lucida Grande" size="19" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="66" type="rgb"/>
+              <Color blue="b5" green="80" red="16" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Destination"/>
           </Properties>
@@ -244,7 +244,7 @@
               <Font name="Lucida Grande" size="19" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="66" type="rgb"/>
+              <Color blue="b6" green="7f" red="12" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Flight Code:"/>
           </Properties>
@@ -255,7 +255,7 @@
               <Font name="Lucida Grande" size="19" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="66" type="rgb"/>
+              <Color blue="b8" green="82" red="14" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Departure date"/>
           </Properties>
@@ -266,7 +266,7 @@
               <Font name="Lucida Grande" size="19" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="66" type="rgb"/>
+              <Color blue="bf" green="84" red="f" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Total Seats"/>
           </Properties>
@@ -333,7 +333,7 @@
               <Font name="Lucida Grande" size="24" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="66" type="rgb"/>
+              <Color blue="c1" green="86" red="10" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Manage Flights"/>
           </Properties>

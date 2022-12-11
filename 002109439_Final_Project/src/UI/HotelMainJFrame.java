@@ -38,9 +38,9 @@ public class HotelMainJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel2.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel2.setBackground(new java.awt.Color(14, 137, 198));
 
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Phosphate", 1, 36)); // NOI18N
         jLabel1.setText("Quickr Airlines");
 
         Exit.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
@@ -78,7 +78,7 @@ public class HotelMainJFrame extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon("/Users/riteesh/Desktop/download.png")); // NOI18N
 
         btnCustomer.setFont(new java.awt.Font("Lucida Grande", 1, 21)); // NOI18N
-        btnCustomer.setForeground(new java.awt.Color(102, 204, 255));
+        btnCustomer.setForeground(new java.awt.Color(16, 130, 186));
         btnCustomer.setText("Customer");
         btnCustomer.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -87,7 +87,7 @@ public class HotelMainJFrame extends javax.swing.JFrame {
         });
 
         btnHotels.setFont(new java.awt.Font("Lucida Grande", 1, 21)); // NOI18N
-        btnHotels.setForeground(new java.awt.Color(102, 204, 255));
+        btnHotels.setForeground(new java.awt.Color(20, 133, 189));
         btnHotels.setText("Hotels");
         btnHotels.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -101,7 +101,7 @@ public class HotelMainJFrame extends javax.swing.JFrame {
         });
 
         btnBookings.setFont(new java.awt.Font("Lucida Grande", 1, 21)); // NOI18N
-        btnBookings.setForeground(new java.awt.Color(102, 204, 255));
+        btnBookings.setForeground(new java.awt.Color(17, 132, 189));
         btnBookings.setText("Bookings");
         btnBookings.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -110,7 +110,7 @@ public class HotelMainJFrame extends javax.swing.JFrame {
         });
 
         jButton5.setFont(new java.awt.Font("Lucida Grande", 1, 21)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(102, 204, 255));
+        jButton5.setForeground(new java.awt.Color(14, 131, 190));
         jButton5.setText("Cancellation");
         jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

@@ -60,12 +60,13 @@ public class UserJFrame extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel2.setBackground(new java.awt.Color(51, 153, 255));
+        jPanel2.setBackground(new java.awt.Color(31, 117, 204));
 
-        jLabel3.setFont(new java.awt.Font("Lucida Grande", 1, 28)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Phosphate", 1, 36)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Quickr");
 
-        jLabel4.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Phosphate", 1, 30)); // NOI18N
         jLabel4.setText("Airlines");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -73,11 +74,13 @@ public class UserJFrame extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(16, 16, 16))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addGap(23, 23, 23))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -90,18 +93,19 @@ public class UserJFrame extends javax.swing.JFrame {
         );
 
         jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel7.setForeground(new java.awt.Color(16, 126, 181));
         jLabel7.setText("Nationality:");
 
         PsPhone.setFont(new java.awt.Font("Lucida Grande", 0, 19)); // NOI18N
 
         jLabel12.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel12.setForeground(new java.awt.Color(14, 134, 193));
         jLabel12.setText("Address:");
 
         PsName.setFont(new java.awt.Font("Lucida Grande", 0, 19)); // NOI18N
 
         btnSave.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
+        btnSave.setForeground(new java.awt.Color(12, 101, 174));
         btnSave.setText("Save");
         btnSave.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -110,14 +114,15 @@ public class UserJFrame extends javax.swing.JFrame {
         });
 
         jLabel8.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel8.setForeground(new java.awt.Color(22, 132, 186));
         jLabel8.setText("Gender:");
 
         jLabel9.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel9.setForeground(new java.awt.Color(26, 140, 198));
         jLabel9.setText("Name:");
 
         btnBack.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(10, 103, 178));
         btnBack.setText("Back");
         btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -133,22 +138,22 @@ public class UserJFrame extends javax.swing.JFrame {
         PsNumber.setFont(new java.awt.Font("Lucida Grande", 0, 19)); // NOI18N
 
         jLabel10.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel10.setForeground(new java.awt.Color(18, 133, 191));
         jLabel10.setText("Passport Number:");
 
         jLabel14.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel14.setForeground(new java.awt.Color(18, 128, 183));
         jLabel14.setText("Phone Number:");
 
         Gender.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
         Gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other" }));
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel1.setForeground(new java.awt.Color(17, 137, 198));
         jLabel1.setText("UserName:");
 
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel2.setForeground(new java.awt.Color(19, 134, 191));
         jLabel2.setText("Password:");
 
         Password.setFont(new java.awt.Font("Lucida Grande", 0, 19)); // NOI18N

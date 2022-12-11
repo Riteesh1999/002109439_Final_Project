@@ -57,7 +57,7 @@ public class CancelJFrame extends javax.swing.JFrame {
         setUndecorated(true);
 
         jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel7.setForeground(new java.awt.Color(20, 146, 210));
         jLabel7.setText("Ticket ID");
 
         btnReset.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
@@ -90,9 +90,9 @@ public class CancelJFrame extends javax.swing.JFrame {
             }
         });
 
-        jPanel13.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel13.setBackground(new java.awt.Color(23, 154, 220));
 
-        jLabel16.setFont(new java.awt.Font("Lucida Grande", 1, 36)); // NOI18N
+        jLabel16.setFont(new java.awt.Font("Phosphate", 1, 36)); // NOI18N
         jLabel16.setText("Quickr Airlines");
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
@@ -113,11 +113,11 @@ public class CancelJFrame extends javax.swing.JFrame {
         );
 
         jLabel6.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel6.setForeground(new java.awt.Color(17, 142, 204));
         jLabel6.setText("Cancellation List");
 
         jLabel11.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel11.setForeground(new java.awt.Color(21, 153, 219));
         jLabel11.setText("Manage Passenger");
 
         btnBack.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
@@ -136,11 +136,11 @@ public class CancelJFrame extends javax.swing.JFrame {
         });
 
         jLabel17.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel17.setForeground(new java.awt.Color(20, 146, 210));
         jLabel17.setText("Flight Code");
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel1.setForeground(new java.awt.Color(27, 156, 220));
         jLabel1.setText("Departure Date");
 
         FLCode.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N

@@ -64,9 +64,9 @@ public class FlightsJFrame extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel2.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel2.setBackground(new java.awt.Color(23, 141, 200));
 
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Phosphate", 1, 36)); // NOI18N
         jLabel1.setText("Quickr Airlines");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -87,29 +87,29 @@ public class FlightsJFrame extends javax.swing.JFrame {
         );
 
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel2.setForeground(new java.awt.Color(20, 137, 196));
         jLabel2.setText("List of Flights");
 
         jLabel3.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel3.setForeground(new java.awt.Color(19, 129, 184));
         jLabel3.setText("Source");
 
         FLCode.setFont(new java.awt.Font("Lucida Grande", 0, 19)); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel4.setForeground(new java.awt.Color(22, 128, 181));
         jLabel4.setText("Destination");
 
         jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel5.setForeground(new java.awt.Color(18, 127, 182));
         jLabel5.setText("Flight Code:");
 
         jLabel6.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel6.setForeground(new java.awt.Color(20, 130, 184));
         jLabel6.setText("Departure date");
 
         jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel7.setForeground(new java.awt.Color(15, 132, 191));
         jLabel7.setText("Total Seats");
 
         FLSource.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
@@ -123,7 +123,7 @@ public class FlightsJFrame extends javax.swing.JFrame {
         FLSeats.setFont(new java.awt.Font("Lucida Grande", 0, 19)); // NOI18N
 
         jLabel8.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel8.setForeground(new java.awt.Color(16, 134, 193));
         jLabel8.setText("Manage Flights");
 
         btnEdit.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N

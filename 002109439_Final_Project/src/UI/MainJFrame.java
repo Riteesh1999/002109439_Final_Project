@@ -46,9 +46,9 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel2.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel2.setBackground(new java.awt.Color(13, 139, 201));
 
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Phosphate", 1, 36)); // NOI18N
         jLabel1.setText("Quickr Airlines");
 
         jLabel4.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
@@ -86,7 +86,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon("/Users/riteesh/Desktop/download.png")); // NOI18N
 
         jButton1.setFont(new java.awt.Font("Lucida Grande", 1, 21)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(102, 204, 255));
+        jButton1.setForeground(new java.awt.Color(16, 127, 182));
         jButton1.setText("Passenger");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -95,7 +95,7 @@ public class MainJFrame extends javax.swing.JFrame {
         });
 
         jButton2.setFont(new java.awt.Font("Lucida Grande", 1, 21)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(102, 204, 255));
+        jButton2.setForeground(new java.awt.Color(14, 134, 195));
         jButton2.setText("Flights");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -109,7 +109,7 @@ public class MainJFrame extends javax.swing.JFrame {
         });
 
         jButton4.setFont(new java.awt.Font("Lucida Grande", 1, 21)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(102, 204, 255));
+        jButton4.setForeground(new java.awt.Color(13, 129, 186));
         jButton4.setText("Tickets");
         jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -118,7 +118,7 @@ public class MainJFrame extends javax.swing.JFrame {
         });
 
         jButton5.setFont(new java.awt.Font("Lucida Grande", 1, 21)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(102, 204, 255));
+        jButton5.setForeground(new java.awt.Color(11, 130, 189));
         jButton5.setText("Cancellation");
         jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

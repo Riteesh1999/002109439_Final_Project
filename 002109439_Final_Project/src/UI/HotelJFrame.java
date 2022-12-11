@@ -63,7 +63,7 @@ public class HotelJFrame extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(0, 51, 51));
 
         jLabel6.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel6.setForeground(new java.awt.Color(14, 136, 197));
         jLabel6.setText("Hotel Type");
 
         TblHotels.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
@@ -88,15 +88,15 @@ public class HotelJFrame extends javax.swing.JFrame {
         jScrollPane1.setViewportView(TblHotels);
 
         jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel7.setForeground(new java.awt.Color(17, 132, 190));
         jLabel7.setText("Total Rooms");
 
         HTLocation.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
         HTLocation.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chicago", "Boston", "New York", "Dallas", "Washington", "Vegas", "Seattle" }));
 
-        jPanel2.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel2.setBackground(new java.awt.Color(13, 143, 208));
 
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Phosphate", 1, 36)); // NOI18N
         jLabel1.setText("Quickr Airlines");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -119,15 +119,15 @@ public class HotelJFrame extends javax.swing.JFrame {
         HTRooms.setFont(new java.awt.Font("Lucida Grande", 0, 19)); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel2.setForeground(new java.awt.Color(13, 132, 191));
         jLabel2.setText("List of Hotels");
 
         jLabel8.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel8.setForeground(new java.awt.Color(16, 145, 210));
         jLabel8.setText("Manage Hotels");
 
         jLabel3.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel3.setForeground(new java.awt.Color(13, 125, 182));
         jLabel3.setText("Location");
 
         btnEdit.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
@@ -157,7 +157,7 @@ public class HotelJFrame extends javax.swing.JFrame {
         });
 
         jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel5.setForeground(new java.awt.Color(16, 137, 197));
         jLabel5.setText("Hotel Name");
 
         btnDelete.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
@@ -269,7 +269,6 @@ public class HotelJFrame extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );

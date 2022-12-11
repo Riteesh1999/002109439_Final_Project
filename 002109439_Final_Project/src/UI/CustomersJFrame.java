@@ -62,14 +62,14 @@ public class CustomersJFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel6.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel6.setForeground(new java.awt.Color(24, 144, 204));
         jLabel6.setText("List of Passengers");
 
         Gender.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
         Gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other" }));
 
         jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel7.setForeground(new java.awt.Color(27, 142, 199));
         jLabel7.setText("Nationality");
 
         TblPassengers.setModel(new javax.swing.table.DefaultTableModel(
@@ -93,25 +93,25 @@ public class CustomersJFrame extends javax.swing.JFrame {
         PsName.setFont(new java.awt.Font("Lucida Grande", 0, 19)); // NOI18N
 
         jLabel8.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel8.setForeground(new java.awt.Color(20, 129, 183));
         jLabel8.setText("Gender");
 
         jLabel9.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel9.setForeground(new java.awt.Color(26, 156, 221));
         jLabel9.setText("Passenger Name");
 
         PsAddress.setFont(new java.awt.Font("Lucida Grande", 0, 19)); // NOI18N
 
         jLabel10.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel10.setForeground(new java.awt.Color(27, 139, 196));
         jLabel10.setText("Passport Number");
 
         jLabel11.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel11.setForeground(new java.awt.Color(24, 144, 204));
         jLabel11.setText("Manage Passenger");
 
         jLabel12.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel12.setForeground(new java.awt.Color(22, 141, 200));
         jLabel12.setText("Address");
 
         btnEdit.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
@@ -130,9 +130,9 @@ public class CustomersJFrame extends javax.swing.JFrame {
             }
         });
 
-        jPanel11.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel11.setBackground(new java.awt.Color(18, 149, 214));
 
-        jLabel13.setFont(new java.awt.Font("Lucida Grande", 1, 36)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Phosphate", 1, 36)); // NOI18N
         jLabel13.setText("Quickr Airlines");
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
@@ -179,7 +179,7 @@ public class CustomersJFrame extends javax.swing.JFrame {
         PsNumber.setFont(new java.awt.Font("Lucida Grande", 0, 19)); // NOI18N
 
         jLabel14.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel14.setForeground(new java.awt.Color(28, 143, 200));
         jLabel14.setText("Phone");
 
         PsPhone.setFont(new java.awt.Font("Lucida Grande", 0, 19)); // NOI18N

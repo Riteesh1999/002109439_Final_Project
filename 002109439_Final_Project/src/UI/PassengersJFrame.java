@@ -62,21 +62,21 @@ public class PassengersJFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel10.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel10.setForeground(new java.awt.Color(18, 128, 183));
         jLabel10.setText("Passport Number");
 
         jLabel14.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel14.setForeground(new java.awt.Color(16, 135, 195));
         jLabel14.setText("Phone");
 
         jLabel11.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel11.setForeground(new java.awt.Color(16, 135, 195));
         jLabel11.setText("Manage Passenger");
 
         PsPhone.setFont(new java.awt.Font("Lucida Grande", 0, 19)); // NOI18N
 
         jLabel12.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel12.setForeground(new java.awt.Color(20, 135, 192));
         jLabel12.setText("Address");
 
         btnEdit.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
@@ -95,9 +95,9 @@ public class PassengersJFrame extends javax.swing.JFrame {
             }
         });
 
-        jPanel12.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel12.setBackground(new java.awt.Color(25, 136, 192));
 
-        jLabel15.setFont(new java.awt.Font("Lucida Grande", 1, 36)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Phosphate", 1, 36)); // NOI18N
         jLabel15.setText("Quickr Airlines");
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
@@ -129,14 +129,14 @@ public class PassengersJFrame extends javax.swing.JFrame {
         NCountry.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "India", "USA", "England", "China", "Russia", "Switzerland" }));
 
         jLabel6.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel6.setForeground(new java.awt.Color(20, 140, 199));
         jLabel6.setText("List of Passengers");
 
         Gender.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
         Gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other" }));
 
         jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel7.setForeground(new java.awt.Color(12, 122, 177));
         jLabel7.setText("Nationality");
 
         TblPassengers.setModel(new javax.swing.table.DefaultTableModel(
@@ -160,11 +160,11 @@ public class PassengersJFrame extends javax.swing.JFrame {
         PsName.setFont(new java.awt.Font("Lucida Grande", 0, 19)); // NOI18N
 
         jLabel8.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel8.setForeground(new java.awt.Color(15, 130, 188));
         jLabel8.setText("Gender");
 
         jLabel9.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel9.setForeground(new java.awt.Color(17, 134, 192));
         jLabel9.setText("Passenger Name");
 
         btnDelete.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
@@ -220,27 +220,24 @@ public class PassengersJFrame extends javax.swing.JFrame {
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel7)
                                             .addComponent(NCountry, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGap(44, 44, 44)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel8)
                                             .addComponent(Gender, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(111, 111, 111)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel10)
                                             .addComponent(PsNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGap(85, 85, 85)
+                                .addGap(61, 61, 61)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel12)
-                                        .addGap(76, 76, 76))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(PsAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(13, 13, 13)))
+                                        .addGap(63, 63, 63))
+                                    .addComponent(PsAddress, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(37, 37, 37)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(25, 25, 25)
-                                        .addComponent(jLabel14))
-                                    .addComponent(PsPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(PsPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel14))))
                         .addContainerGap())))
         );
         layout.setVerticalGroup(
@@ -249,26 +246,31 @@ public class PassengersJFrame extends javax.swing.JFrame {
                 .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(44, 44, 44)
-                        .addComponent(jLabel9))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(96, 96, 96)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel12)
                             .addComponent(jLabel10)
-                            .addComponent(jLabel8)
                             .addComponent(jLabel7)
-                            .addComponent(jLabel14))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PsName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PsAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NCountry, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Gender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PsNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PsPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel14))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(PsName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PsAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NCountry, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PsNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PsPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(44, 44, 44)
+                                .addComponent(jLabel9))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(45, 45, 45)
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Gender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnBack)
@@ -489,14 +491,12 @@ public class PassengersJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables

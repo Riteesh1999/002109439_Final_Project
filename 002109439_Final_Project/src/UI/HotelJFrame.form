@@ -24,7 +24,6 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel1" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -178,7 +177,7 @@
               <Font name="Lucida Grande" size="19" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="66" type="rgb"/>
+              <Color blue="c5" green="88" red="e" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Hotel Type"/>
           </Properties>
@@ -220,7 +219,7 @@
               <Font name="Lucida Grande" size="19" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="66" type="rgb"/>
+              <Color blue="be" green="84" red="11" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Total Rooms"/>
           </Properties>
@@ -249,7 +248,7 @@
         <Container class="javax.swing.JPanel" name="jPanel2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="66" type="rgb"/>
+              <Color blue="d0" green="8f" red="d" type="rgb"/>
             </Property>
           </Properties>
 
@@ -277,7 +276,7 @@
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Grande" size="36" style="1"/>
+                  <Font name="Phosphate" size="36" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Quickr Airlines"/>
               </Properties>
@@ -297,7 +296,7 @@
               <Font name="Lucida Grande" size="24" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="66" type="rgb"/>
+              <Color blue="bf" green="84" red="d" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="List of Hotels"/>
           </Properties>
@@ -308,7 +307,7 @@
               <Font name="Lucida Grande" size="24" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="66" type="rgb"/>
+              <Color blue="d2" green="91" red="10" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Manage Hotels"/>
           </Properties>
@@ -319,7 +318,7 @@
               <Font name="Lucida Grande" size="19" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="66" type="rgb"/>
+              <Color blue="b6" green="7d" red="d" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Location"/>
           </Properties>
@@ -370,7 +369,7 @@
               <Font name="Lucida Grande" size="19" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="66" type="rgb"/>
+              <Color blue="c5" green="89" red="10" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Hotel Name"/>
           </Properties>
