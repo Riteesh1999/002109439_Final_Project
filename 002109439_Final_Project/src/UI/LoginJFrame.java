@@ -4,7 +4,13 @@
  */
 package UI;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
+import net.proteanit.sql.DbUtils;
 
 /**
  *
@@ -35,8 +41,9 @@ public class LoginJFrame extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txtUser = new javax.swing.JTextField();
         txtPass = new javax.swing.JPasswordField();
-        btnLogin = new javax.swing.JButton();
+        btnAdminLogin = new javax.swing.JButton();
         btnSignup = new javax.swing.JLabel();
+        btnUserLogin = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,12 +77,12 @@ public class LoginJFrame extends javax.swing.JFrame {
         txtPass.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         txtPass.setText("jPasswordField1");
 
-        btnLogin.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        btnLogin.setForeground(new java.awt.Color(102, 204, 255));
-        btnLogin.setText("Login");
-        btnLogin.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnAdminLogin.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        btnAdminLogin.setForeground(new java.awt.Color(102, 204, 255));
+        btnAdminLogin.setText("Admin Login");
+        btnAdminLogin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnLoginMouseClicked(evt);
+                btnAdminLoginMouseClicked(evt);
             }
         });
 
@@ -87,31 +94,48 @@ public class LoginJFrame extends javax.swing.JFrame {
             }
         });
 
+        btnUserLogin.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        btnUserLogin.setForeground(new java.awt.Color(102, 204, 255));
+        btnUserLogin.setText("User Login");
+        btnUserLogin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnUserLoginMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel2)
+                                            .addComponent(jLabel3))
+                                        .addGap(34, 34, 34)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(txtUser)
+                                            .addComponent(txtPass)))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(113, 113, 113)
+                                        .addComponent(btnSignup)))
+                                .addGap(19, 19, 19))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(61, 61, 61)
+                                .addComponent(btnUserLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
                                 .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3))
-                                .addGap(34, 34, 34)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnLogin)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(txtPass)
-                                        .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(88, 88, 88)
-                                .addComponent(btnSignup)))))
-                .addContainerGap(111, Short.MAX_VALUE))
+                                .addComponent(btnAdminLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(23, 23, 23)))
+                .addGap(44, 44, 44))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -128,7 +152,9 @@ public class LoginJFrame extends javax.swing.JFrame {
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
-                .addComponent(btnLogin)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAdminLogin)
+                    .addComponent(btnUserLogin))
                 .addGap(18, 18, 18)
                 .addComponent(btnSignup)
                 .addContainerGap(75, Short.MAX_VALUE))
@@ -148,7 +174,12 @@ public class LoginJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseClicked
+//    Connection cn = null;
+//    PreparedStatement ps = null;
+//    ResultSet rs = null, rs1 = null;
+//    Statement st = null, st1 = null;
+    
+    private void btnAdminLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdminLoginMouseClicked
         if(txtUser.getText().isEmpty() || txtPass.getText().isEmpty())
         {
             JOptionPane.showMessageDialog(this, "Enter Username and Password");
@@ -162,17 +193,47 @@ public class LoginJFrame extends javax.swing.JFrame {
         }else if(txtUser.getText().equals("Hotel") && txtPass.getText().equals("hotel")){
             new HotelMainJFrame().setVisible(true);
             this.dispose();
-        }
-        else{
+        }else{
             JOptionPane.showMessageDialog(this, "Please enter valid credentials.");
             txtUser.setText(null);
             txtPass.setText(null);
         }
-    }//GEN-LAST:event_btnLoginMouseClicked
+    }//GEN-LAST:event_btnAdminLoginMouseClicked
 
     private void btnSignupMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSignupMouseClicked
-        
+        new UserJFrame().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnSignupMouseClicked
+
+    private void btnUserLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUserLoginMouseClicked
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Airlines" , "root" , "");
+            String sql = "Select * from tblPass where UserName = ? and Password = ?";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, txtUser.getText());
+            ps.setString(2, txtPass.getText());
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()){
+                JOptionPane.showMessageDialog(null, "Login Succesful");
+                new UserMainJFrame().setVisible(true);
+                this.dispose();
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Incorrect Login Details.");
+                txtUser.setText("");
+                txtPass.setText("");
+            }
+            con.close();
+//            cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Airlines" , "root" , "");
+//            st = cn.createStatement();
+//            rs = st.executeQuery("Select * from tblPass where UserName = ? and Password = ?");
+//            ps.setString(1, txtUser.getText());
+            
+        }catch(Exception e){
+            
+        }
+    }//GEN-LAST:event_btnUserLoginMouseClicked
 
     /**
      * @param args the command line arguments
@@ -211,8 +272,9 @@ public class LoginJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnLogin;
+    private javax.swing.JButton btnAdminLogin;
     private javax.swing.JLabel btnSignup;
+    private javax.swing.JButton btnUserLogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

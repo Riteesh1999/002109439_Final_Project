@@ -3,12 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/riteesh/Desktop/GitHub/002109439_Final_Project/002109439_Final_Project/src/UI/FlightsJFrame.java</file>
+            <file>file:/Users/riteesh/Desktop/GitHub/002109439_Final_Project/002109439_Final_Project/src/UI/CustomersJFrame.java</file>
             <file>file:/Users/riteesh/Desktop/GitHub/002109439_Final_Project/002109439_Final_Project/src/UI/LoginJFrame.java</file>
-            <file>file:/Users/riteesh/Desktop/GitHub/002109439_Final_Project/002109439_Final_Project/src/UI/CancelJFrame.java</file>
-            <file>file:/Users/riteesh/Desktop/GitHub/002109439_Final_Project/002109439_Final_Project/src/UI/PassengersJFrame.java</file>
-            <file>file:/Users/riteesh/Desktop/GitHub/002109439_Final_Project/002109439_Final_Project/src/UI/MainJFrame.java</file>
+            <file>file:/Users/riteesh/Desktop/GitHub/002109439_Final_Project/002109439_Final_Project/src/UI/CompanyBookingJFrame.java</file>
+            <file>file:/Users/riteesh/Desktop/GitHub/002109439_Final_Project/002109439_Final_Project/src/UI/HotelJFrame.java</file>
+            <file>file:/Users/riteesh/Desktop/GitHub/002109439_Final_Project/002109439_Final_Project/src/UI/LoadingJFrame.java</file>
             <file>file:/Users/riteesh/Desktop/GitHub/002109439_Final_Project/002109439_Final_Project/src/UI/TicketsJFrame.java</file>
+            <file>file:/Users/riteesh/Desktop/GitHub/002109439_Final_Project/002109439_Final_Project/src/UI/FlightsJFrame.java</file>
+            <file>file:/Users/riteesh/Desktop/GitHub/002109439_Final_Project/002109439_Final_Project/src/UI/CompanyJFrame.java</file>
+            <file>file:/Users/riteesh/Desktop/GitHub/002109439_Final_Project/002109439_Final_Project/src/UI/CancelJFrame.java</file>
+            <file>file:/Users/riteesh/Desktop/GitHub/002109439_Final_Project/002109439_Final_Project/src/UI/HotelMainJFrame.java</file>
+            <file>file:/Users/riteesh/Desktop/GitHub/002109439_Final_Project/002109439_Final_Project/src/UI/PassengersJFrame.java</file>
+            <file>file:/Users/riteesh/Desktop/GitHub/002109439_Final_Project/002109439_Final_Project/src/UI/BookingJFrame.java</file>
+            <file>file:/Users/riteesh/Desktop/GitHub/002109439_Final_Project/002109439_Final_Project/src/UI/MainJFrame.java</file>
         </group>
     </open-files>
 </project-private>

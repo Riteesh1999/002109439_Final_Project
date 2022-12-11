@@ -24,6 +24,7 @@ public class PassengersJFrame extends javax.swing.JFrame {
      */
     public PassengersJFrame() {
         initComponents();
+        DisplayPassengers();
     }
 
     /**
