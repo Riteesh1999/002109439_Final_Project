@@ -73,6 +73,11 @@ public class FTCustomers extends javax.swing.JFrame {
         jLabel11.setText("Manage Passenger");
 
         PsPhone.setFont(new java.awt.Font("Lucida Grande", 0, 19)); // NOI18N
+        PsPhone.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                PsPhoneKeyReleased(evt);
+            }
+        });
 
         jLabel12.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(20, 135, 192));
@@ -394,6 +399,10 @@ public class FTCustomers extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void PsPhoneKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PsPhoneKeyReleased
+        
+    }//GEN-LAST:event_PsPhoneKeyReleased
 
     
     /**
