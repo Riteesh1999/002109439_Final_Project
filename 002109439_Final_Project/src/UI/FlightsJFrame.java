@@ -310,7 +310,7 @@ public class FlightsJFrame extends javax.swing.JFrame {
     }
     
     private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
-        new MainJFrame().setVisible(true);
+        new FlightsMainJFrame().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBackMouseClicked
 

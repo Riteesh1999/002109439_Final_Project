@@ -88,7 +88,7 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="518" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="469" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -96,9 +96,9 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="jPanel11" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jLabel11" min="-2" pref="33" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
@@ -321,8 +321,8 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jLabel13" min="-2" pref="288" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="420" max="-2" attributes="0"/>
+                  <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="376" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -342,7 +342,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Phosphate" size="36" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Quickr Airlines"/>
+            <Property name="text" type="java.lang.String" value="Quickr Third party"/>
           </Properties>
         </Component>
       </SubComponents>

@@ -91,7 +91,7 @@ public class HotelJFrame extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(17, 132, 190));
         jLabel7.setText("Total Rooms");
 
-        HTLocation.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
+        HTLocation.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         HTLocation.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chicago", "Boston", "New York", "Dallas", "Washington", "Vegas", "Seattle" }));
 
         jPanel2.setBackground(new java.awt.Color(13, 143, 208));
@@ -168,7 +168,8 @@ public class HotelJFrame extends javax.swing.JFrame {
             }
         });
 
-        HTType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        HTType.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        HTType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Casino Hotel", "Apartment Hotel", "Resort Hotel", "Business Hotels", "Boutique Hotel", "Motel", " ", " " }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

@@ -97,7 +97,7 @@ public class UserFTBookingJFrame extends javax.swing.JFrame {
         FLCode.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
 
         Gender.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        Gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other" }));
+        Gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Genderquee", "Polygender", "Genderflui" }));
 
         PsPass.setFont(new java.awt.Font("Lucida Grande", 0, 19)); // NOI18N
 

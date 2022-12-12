@@ -34,14 +34,14 @@ public class HotelMainJFrame extends javax.swing.JFrame {
         btnCustomer = new javax.swing.JButton();
         btnHotels = new javax.swing.JButton();
         btnBookings = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btnCancellation = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(14, 137, 198));
 
         jLabel1.setFont(new java.awt.Font("Phosphate", 1, 36)); // NOI18N
-        jLabel1.setText("Quickr Airlines");
+        jLabel1.setText("Quickr Hotels");
 
         Exit.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         Exit.setText("X");
@@ -57,19 +57,19 @@ public class HotelMainJFrame extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(191, 191, 191)
+                .addComponent(jLabel1)
+                .addGap(202, 202, 202)
                 .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 49, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 3, 24)); // NOI18N
@@ -109,12 +109,12 @@ public class HotelMainJFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setFont(new java.awt.Font("Lucida Grande", 1, 21)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(14, 131, 190));
-        jButton5.setText("Cancellation");
-        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnCancellation.setFont(new java.awt.Font("Lucida Grande", 1, 21)); // NOI18N
+        btnCancellation.setForeground(new java.awt.Color(14, 131, 190));
+        btnCancellation.setText("Cancellation");
+        btnCancellation.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton5MouseClicked(evt);
+                btnCancellationMouseClicked(evt);
             }
         });
 
@@ -137,7 +137,7 @@ public class HotelMainJFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnBookings)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton5)
+                        .addComponent(btnCancellation)
                         .addGap(20, 20, 20))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -157,7 +157,7 @@ public class HotelMainJFrame extends javax.swing.JFrame {
                     .addComponent(btnCustomer)
                     .addComponent(btnHotels)
                     .addComponent(btnBookings)
-                    .addComponent(jButton5))
+                    .addComponent(btnCancellation))
                 .addContainerGap())
         );
 
@@ -170,7 +170,7 @@ public class HotelMainJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_ExitMouseClicked
 
     private void btnCustomerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCustomerMouseClicked
-        new CustomersJFrame().setVisible(true);
+        new HTCustomersJFrame().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnCustomerMouseClicked
 
@@ -184,14 +184,14 @@ public class HotelMainJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnHotelsActionPerformed
 
     private void btnBookingsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBookingsMouseClicked
-        new TicketsJFrame().setVisible(true);
+        new FlightBookingsJFrame().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBookingsMouseClicked
 
-    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
-        new CancelJFrame().setVisible(true);
+    private void btnCancellationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancellationMouseClicked
+        new HTCancelJFrame().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton5MouseClicked
+    }//GEN-LAST:event_btnCancellationMouseClicked
 
     /**
      * @param args the command line arguments
@@ -231,9 +231,9 @@ public class HotelMainJFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Exit;
     private javax.swing.JButton btnBookings;
+    private javax.swing.JButton btnCancellation;
     private javax.swing.JButton btnCustomer;
     private javax.swing.JButton btnHotels;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

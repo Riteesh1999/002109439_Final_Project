@@ -102,7 +102,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="246" max="-2" attributes="0"/>
-                      <Component id="jLabel3" min="-2" pref="288" max="-2" attributes="0"/>
+                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -123,7 +123,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Phosphate" size="36" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Quickr Airlines"/>
+                <Property name="text" type="java.lang.String" value="Quickr Bookings"/>
               </Properties>
             </Component>
           </SubComponents>

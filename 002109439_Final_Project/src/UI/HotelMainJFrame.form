@@ -39,7 +39,7 @@
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="btnBookings" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jButton5" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnCancellation" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -64,7 +64,7 @@
                   <Component id="btnCustomer" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnHotels" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnBookings" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnCancellation" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -84,8 +84,8 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jLabel1" min="-2" pref="288" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="191" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="202" max="-2" attributes="0"/>
                   <Component id="Exit" min="-2" pref="20" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -93,13 +93,13 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" pref="31" max="-2" attributes="0"/>
-                  <EmptySpace pref="24" max="32767" attributes="0"/>
+                  <Component id="Exit" min="-2" pref="28" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="49" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="Exit" min="-2" pref="28" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" pref="31" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -110,7 +110,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Phosphate" size="36" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Quickr Airlines"/>
+            <Property name="text" type="java.lang.String" value="Quickr Hotels"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="Exit">
@@ -184,7 +184,7 @@
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnBookingsMouseClicked"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton5">
+    <Component class="javax.swing.JButton" name="btnCancellation">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Lucida Grande" size="21" style="1"/>
@@ -195,7 +195,7 @@
         <Property name="text" type="java.lang.String" value="Cancellation"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton5MouseClicked"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnCancellationMouseClicked"/>
       </Events>
     </Component>
   </SubComponents>

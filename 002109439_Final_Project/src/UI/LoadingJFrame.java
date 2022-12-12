@@ -45,7 +45,7 @@ public class LoadingJFrame extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(13, 143, 208));
 
         jLabel3.setFont(new java.awt.Font("Phosphate", 1, 36)); // NOI18N
-        jLabel3.setText("Quickr Airlines");
+        jLabel3.setText("Quickr Bookings");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -53,7 +53,7 @@ public class LoadingJFrame extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(246, 246, 246)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(

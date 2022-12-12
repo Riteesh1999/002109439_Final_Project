@@ -256,10 +256,12 @@
           <Font name="Lucida Grande" size="19" style="1"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="3">
+          <StringArray count="5">
             <StringItem index="0" value="Male"/>
             <StringItem index="1" value="Female"/>
-            <StringItem index="2" value="Other"/>
+            <StringItem index="2" value="Genderquee"/>
+            <StringItem index="3" value="Polygender"/>
+            <StringItem index="4" value="Genderflui"/>
           </StringArray>
         </Property>
       </Properties>
@@ -385,7 +387,7 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="400" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="416" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -405,7 +407,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Phosphate" size="36" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Quickr Bookings"/>
+            <Property name="text" type="java.lang.String" value="Quickr Hotels"/>
           </Properties>
         </Component>
       </SubComponents>

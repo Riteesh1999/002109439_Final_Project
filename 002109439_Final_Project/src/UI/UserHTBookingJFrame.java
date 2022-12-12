@@ -112,7 +112,7 @@ public class UserHTBookingJFrame extends javax.swing.JFrame {
         jLabel8.setText("Gender");
 
         Gender.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        Gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other" }));
+        Gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Genderquee", "Polygender", "Genderflui" }));
 
         PsName.setFont(new java.awt.Font("Lucida Grande", 0, 19)); // NOI18N
 
@@ -160,7 +160,7 @@ public class UserHTBookingJFrame extends javax.swing.JFrame {
         jPanel11.setBackground(new java.awt.Color(25, 163, 231));
 
         jLabel13.setFont(new java.awt.Font("Phosphate", 1, 36)); // NOI18N
-        jLabel13.setText("Quickr Bookings");
+        jLabel13.setText("Quickr Hotels");
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -169,7 +169,7 @@ public class UserHTBookingJFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel13)
-                .addGap(400, 400, 400))
+                .addGap(416, 416, 416))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -65,21 +65,22 @@ public class CompanyJFrame extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Quickr");
 
-        jLabel2.setFont(new java.awt.Font("Phosphate", 1, 30)); // NOI18N
-        jLabel2.setText("Airlines");
+        jLabel2.setFont(new java.awt.Font("Phosphate", 1, 28)); // NOI18N
+        jLabel2.setText("THIRD PARTY");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel2))
-                    .addComponent(jLabel1))
-                .addContainerGap(12, Short.MAX_VALUE))
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel2)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,7 +100,7 @@ public class CompanyJFrame extends javax.swing.JFrame {
         NCountry.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "India", "USA", "England", "China", "Russia", "Switzerland" }));
 
         Gender.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
-        Gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other" }));
+        Gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Genderquee", "Polygender", "Genderflui" }));
 
         jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 19)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(102, 204, 255));
